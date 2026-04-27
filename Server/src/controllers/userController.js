@@ -97,7 +97,7 @@ export const logoutController = (req, res) => {
 export const googleCallbackController = (req, res) => {
     generateToken(res, req.user._id);
     // Frontend ke helper page par redirect karein
-    res.redirect('http://localhost:5173/login/success'); 
+    res.redirect('http://13.53.160.129/login/success'); 
 };
 
 // @desc    Get user profile
