@@ -30,7 +30,7 @@ const Login = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = "http://localhost:3000/api/v1/auth/google";
+        window.location.href = "http://13.53.160.129:3000/api/v1/auth/google";
     };
 
     return (
