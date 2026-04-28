@@ -1,0 +1,36 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+      - today
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd ~/Ticket-site
+
+            git pull
+
+            # Backend
+            cd Server
+            npm install
+            pm2 restart all
+
+            # Frontend
+            cd ../Client
+            npm install
+            npm run build
+            sudo rm -rf /var/www/html/*
+            sudo cp -r dist/* /var/www/html/
+            sudo systemctl restart nginx
