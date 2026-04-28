@@ -7,6 +7,8 @@ import { useAuth } from '../context/AuthContext';
 // --- Import your static assets and components ---
 import HomeLogo1 from "../assets/HomeLogo1.png";
 import TravelOptions from './TravelOptions';
+ 
+<h1 style={{color:"red"}}>CI/CD WORKING 🔥</h1>
 
 // Helper function to extract station code from a string like "Gorakhpur (GKP)"
 const getStationCode = (stationString) => {

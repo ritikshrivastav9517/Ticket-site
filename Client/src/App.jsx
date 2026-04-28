@@ -24,12 +24,14 @@ import ResetPassword from './pages/utilityPages/ResetPassword';
 
 const App = () => {
   return (
+     
     <Router>
       <Routes>
         {/* The parent Layout Route renders the Navbar and Footer */}
         <Route path="/" element={<Layout />}>
           {/* All these child routes will render inside the Layout's <Outlet /> */}
           <Route index element={<Home />} />
+
 
           {/* Routes for navbarPages */}
           <Route path="login" element={<Login />} />
